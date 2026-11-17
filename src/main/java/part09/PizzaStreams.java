@@ -29,7 +29,7 @@ public class PizzaStreams {
          * You can use the toppings() method of a Pizza to get the toppings as a
          * list of strings.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> pizza.toppings().contains("pineapple")); // TODO: implement this method
     }
 
     /**
@@ -43,7 +43,7 @@ public class PizzaStreams {
          * Like the previous method, but this time you must select the pizzas
          * that do not have "pineapple" as a topping.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> !(pizza.toppings().contains("pineapple"))); // TODO: implement this method
     }
 
     /**
@@ -60,7 +60,7 @@ public class PizzaStreams {
          * that have the given topping. You can assume that toppings are
          * always in lower case.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> pizza.toppings().contains(topping)); // TODO: implement this method
     }
 
     /**
@@ -81,7 +81,12 @@ public class PizzaStreams {
          * of the given toppings and then use that method here. You are also allowed to
          * add new methods in the Pizza class.
          */
-        return null; // TODO: implement this method
+
+        return pizzas
+                .filter(pizza -> toppings.stream().anyMatch(topping -> pizza.toppings().contains(topping))); // TODO:
+        // implement
+        // this
+        // method
     }
 
     /**
@@ -100,7 +105,7 @@ public class PizzaStreams {
          * https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream
          * /Stream.html#sorted(java.util.Comparator)
          */
-        return null; // TODO: implement this method
+        return pizzas.sorted((p1, p2) -> Double.compare(p1.price(), p2.price())); // TODO: implement this method
     }
 
     /**
@@ -118,6 +123,6 @@ public class PizzaStreams {
          * compareToIgnoreCase() method of the String class to compare the names of the
          * pizzas.
          */
-        return null; // TODO: implement this method
+        return pizzas.sorted((p1, p2) -> p1.name().compareTo(p2.name())); // TODO: implement this method
     }
 }
